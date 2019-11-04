@@ -1,5 +1,8 @@
 import asyncio
 from proxybroker import Broker
+import argparse
+parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser.add_argument("--limit", default=10, help="Limit")
 
 async def show(proxies):
     while True:
@@ -11,11 +14,13 @@ async def show(proxies):
 
 
 def main():
+    args = parser.parse_args()
+    limit = args.limit
     countries = ['US']
     proxies = asyncio.Queue()
     broker = Broker(proxies)
     loop = asyncio.get_event_loop()
-    tasks = asyncio.gather(broker.find(types=['HTTP', 'HTTPS'], countries=countries, limit=100), show(proxies))
+    tasks = asyncio.gather(broker.find(types=['HTTP', 'HTTPS'], countries=countries, limit=10), show(proxies))
     loop.run_until_complete(tasks)
 
 
