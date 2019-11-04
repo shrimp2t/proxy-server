@@ -10,7 +10,7 @@ app.get('/', (req, res, next)=>{
 	    res.status(401).json({status: 'error', message: 'error', data: err});
 	    return;
 	  }
-	  var proxies = stdout.split('\r');
+	  var proxies = stdout.split('\n');
 	  console.log( 'proxies', proxies );
 	  res.json({status: 'success', message: 'Successfully', data: proxies});
 	});
