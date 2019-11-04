@@ -9,7 +9,6 @@ async def show(proxies):
 		row = '%s://%s:%d\n' % (proto, proxy.host, proxy.port)
 		print( '%s\n' % proxy )
 
-
 countries = ['US']
 proxies = asyncio.Queue()
 broker = Broker(proxies)
