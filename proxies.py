@@ -6,7 +6,7 @@ async def show(proxies):
         proxy = await proxies.get()
         if proxy is None: break
         proto = 'https' if 'HTTPS' in proxy.types else 'http'
-        row = '%s://%s:%d\n' % (proto, proxy.host, proxy.port)
+        row = '%s://%s:%d' % (proto, proxy.host, proxy.port)
         print( '%s\n' % row )
 
 
