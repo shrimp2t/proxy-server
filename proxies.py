@@ -2,7 +2,7 @@ import asyncio
 from proxybroker import Broker
 import argparse
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("--limit", default=10, help="Limit")
+parser.add_argument("--limit", type=int, default=10, help="Limit")
 
 async def show(proxies):
     while True:
