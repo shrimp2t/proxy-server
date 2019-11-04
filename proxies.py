@@ -15,7 +15,8 @@ def main():
     proxies = asyncio.Queue()
     broker = Broker(proxies)
     loop = asyncio.get_event_loop()
-    tasks = asyncio.gather(broker.find(broker.find(types=['HTTP', 'HTTPS'], countries=countries, limit=10), show(proxies))
+    tasks = asyncio.gather(broker.find(broker.find(types=['HTTP', 'HTTPS'], countries=countries, limit=10),
+                                       show(proxies))
     loop.run_until_complete(tasks)
 
 if __name__ == '__main__':
