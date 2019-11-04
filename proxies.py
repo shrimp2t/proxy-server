@@ -3,11 +3,11 @@ from proxybroker import Broker
 
 async def show(proxies):
     while True:
-		proxy = await proxies.get()
-		if proxy is None: break
-		proto = 'https' if 'HTTPS' in proxy.types else 'http'
-		row = '%s://%s:%d\n' % (proto, proxy.host, proxy.port)
-		print( '%s\n' % proxy )
+        proxy = await proxies.get()
+        if proxy is None: break
+        proto = 'https' if 'HTTPS' in proxy.types else 'http'
+        row = '%s://%s:%d\n' % (proto, proxy.host, proxy.port)
+        print( '%s\n' % proxy )
 
 countries = ['US']
 proxies = asyncio.Queue()
